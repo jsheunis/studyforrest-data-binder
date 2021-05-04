@@ -1,0 +1,23 @@
+name: datalad_notebook
+
+channels:
+  - default
+  - conda-forge
+
+dependencies:
+  - python=3.8.*
+  - pip
+  - git
+  - git-annex
+  - pandas
+  - numpy
+  - matplotlib
+  - nibabel
+  - datalad=0.13
+  - texinfo
+  - nilearn
+  - plotly
+
+  - pip:
+      - pybids==0.12.3 # to query bids datasets
+      - datalad-installer
