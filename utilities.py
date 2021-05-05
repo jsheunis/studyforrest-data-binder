@@ -1,6 +1,37 @@
 import os
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import nibabel as nib
+
+def plot_structural(filename):
+    """
+    A utility function to plot 3 views of a structural brain image (in
+    NIfTI format) using matplotlib
+    
+    Parameters
+    ----------
+    filename: the absolute path of the NIfTI file
+
+    Returns
+    -------
+    fig: the figure to be displayed
+    """
+    
+    img_nii = nib.load(filename)
+    fig, axs = plt.subplots(1, 3)
+    axs[0].imshow(np.rot90(np.flipud(img_nii.get_fdata()[:,:,140])), cmap='gray')
+    axs[0].set_xticks([])
+    axs[0].set_yticks([])
+    axs[1].imshow(np.flipud(img_nii.get_fdata()[150,:,:]), cmap='gray')
+    axs[1].set_xticks([])
+    axs[1].set_yticks([])
+    axs[2].imshow(img_nii.get_fdata()[:,250,:], cmap='gray')
+    axs[2].set_xticks([])
+    axs[2].set_yticks([])
+    fig.set_size_inches(16, 8)
+    
+    return fig
 
 def prepare_fd(dataset_dir):
     """

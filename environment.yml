@@ -15,7 +15,6 @@ dependencies:
   - nibabel
   - datalad=0.13
   - texinfo
-  - nilearn
   - plotly
 
   - pip:
