@@ -8,3 +8,5 @@ __pycache__/
 
 # DataLad dataset
 studyforrest-data
+
+.DS_Store
