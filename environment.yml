@@ -7,16 +7,10 @@ channels:
 dependencies:
   - python=3.8.*
   - pip
-  - git
-  - git-annex
   - pandas
   - numpy
   - matplotlib
   - nibabel
-  - datalad=0.13
+  - datalad
   - texinfo
   - plotly
-
-  - pip:
-      - pybids==0.12.3 # to query bids datasets
-      - datalad-installer
